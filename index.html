@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>ChromeTab</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <style>
+      body.dark{
+    --bg-color:#3c4043;
+    --text-color:#ffffff;
+    --shadow-color:rgb(239 242 243 / 10%);
+    --dark-shadow-color:rgb(32,32,32);
+}
+
+
+body{
+    margin: 0px;
+    --bg-color:#fffffff;
+    --text-color:#000;
+    --shadow-color:#dee0e0b0;
+    --dark-shadow-color:#eff2f3;
+
+}
+
+body{
+    background-color: var(--bg-color);
+}
+
+
+.toolbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 16px;
+    padding-right: 16px;
+
+
+}
+.toolbar a{
+    font-family: Roboto;
+    font-size: 12px;
+    padding-right: 17px;
+    color: var(--text-color);
+}
+a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.darkMode{
+    border: none;
+    background-color: transparent;
+    padding-right:12px;
+    margin-top: -2px;
+    color: var(--text-color);
+
+}
+.darkMode2{
+    display: none;
+    color:white;
+    border: none;
+    background-color: transparent;
+    padding-right:12px;
+    margin-top: -2px;
+    color: var(--text-color);
+
+}
+.darkMode2:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.darkMode:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.apps{
+    margin-right: 17px;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.apps:hover{
+    cursor: pointer;
+    background-color: var(--shadow-color)
+}
+
+.avatar{
+    width: 32px;
+    height: 32px;
+    border-radius: 32px;
+    background-color: #719c66;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.avatar p{
+    font-family: Roboto;
+    font-size: 18px;
+    color: var(bg-color);
+    
+}
+
+.content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 70px;
+
+}
+
+.search-bar{
+    margin-top: 60px;
+    width: 50%;
+    height: 44px;
+    border-radius: 58px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
+}
+
+.search-bar input{
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    margin-left: 12px;
+
+}
+input:focus{
+    outline: none;
+}
+
+.shortcut{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column ;
+    text-align: center;
+    width: 110px;
+    height: 100px;
+    border-radius: 4px;
+    margin-top: 16px;
+    padding-top: 16px;
+}
+
+.shortcut:hover{
+    cursor: pointer;
+    background-color:var(--shadow-color);
+}
+
+.shortcut div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    background-color: var(--dark-shadow-color);
+
+}
+
+
+span{
+    text-align: center;
+    margin-top: 16px;
+    font-family: Roboto;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+#escuro, #escuro2{
+    display: none;
+}
+#claro{
+    display: block ;
+}
+#darkMode2{
+    display: none;
+    color: white;
+}
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+    <div class="toolbar">
+        <button class="darkMode" id="darkMode" onclick="dark();" >Modo Escuro</button>
+        <button class="darkMode2" id="darkMode2" onclick="light();" >Modo claro</button>
+        <a  id="troca" >Gmail</a>
+        <a  id="troca2">Imagens</a>
+        <div class="apps"> 
+          <img id="claro" width="20px" src="img/application.png" alt="">
+          <img  id="escuro" width="20px" src="img/icons8-menu-circulado-50.png" alt="">
+        </div>
+        <div class="avatar">
+          <p>I</p>
+        </div>
+      </div>
+      <div class="content">
+        <img id="claro2" width="42%" src="img/logo.png" alt="">
+        <img  id="escuro2" width="42%" src="img/google-white-logo.png" alt="">
+        <div class="search-bar">
+          <img  src="img/icons8-lupa.svg" alt="">
+          <input autofocus type="text" placeholder="Pesquise no google ou digite um URL">
+          <img style="cursor:pointer;" width="23px" src="img/voz-do-google.png" alt="">
+        </div>
+        <div class="shortcut">
+          <div>
+            <img id="claro" width="25px" src="img/icons8-soma-64.png" alt="">
+            <img  id="escuro" width="25px" src="img/icons8-soma-30.png" alt="">
+          </div>
+          <span id="troca3">Adicionar atalhos</span>
+        </div>
+      </div>
+
+      <script src="script.js"></script>
+
+</body>
+</html>
